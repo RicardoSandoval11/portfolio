@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+    Ricardo Sandoval | About me
+{% endblock title %}
+    
+
+{% block content %}
+    <div class="content-aboutme">
+        <div class="title">
+            <h1>About me</h1>
+        </div>
+        <section>
+            <div class="subtitle">
+                <h2>Laboral experience</h2>
+            </div>
+            <div class="section-content">
+                <div class="image-aboutme">
+                    <img src="{{data.laboral_experience_img.url}}" alt="capgemini">
+                </div>
+                <div class="information-about-me">
+                    <p>{{data.laboral_experience}}</p>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="subtitle">
+                <h2>Education</h2>
+            </div>
+            <div class="section-content">
+                <div class="image-aboutme">
+                    <img src="{{data.univeristy_img.url}}" alt="San Carlos Univeristy">
+                </div>
+                <div class="information-about-me">
+                    <p>{{data.univeristy}}</p>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="subtitle">
+                <h2>Courses</h2>
+            </div>
+            <div class="section-content">
+               {% for certificate in certificates %}
+               <div class="course">
+                   <div class="img">
+                       <img src="{{certificate.image.url}}" alt="{{certificate.title}}">
+                   </div>
+                   <div class="information">
+                       <div class="subtitle">
+                           <h3>
+                               {{certificate.title}}
+                           </h3>
+                       </div>
+                       <div class="description">
+                           <p>
+                               {{certificate.description}}
+                           </p>
+                       </div>
+                   </div>
+               </div>
+               {% endfor %}
+            </div>
+        </section>
+    </div>
+{% endblock content %}
+    

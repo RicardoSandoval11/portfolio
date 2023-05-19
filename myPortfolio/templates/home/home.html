@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+    Ricardo Sandoval | Home
+{% endblock title %}
+    
+
+{% block content %}
+    <div class="content-home">
+        <div class="subheader">
+            <div class="my-name">
+                <span>
+                    Hi, my name is <h1>{{data.name}}.</h1>
+                </span>
+            </div>
+            <div>
+                <p class="presentation">"{{data.presentation}}"</p>
+            </div>
+        </div>
+        <div class="second-header">
+            <div class="profile-img animate__fadeIn animate__animated">
+                <img src="{{data.profile_img.url}}" alt="Ricardo Sandoval">
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+    

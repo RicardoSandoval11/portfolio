@@ -1,0 +1,926 @@
+@keyframes wave {
+    0%, 100%   {
+        border-radius: 63% 37% 54% 46%/55% 48% 52% 45%;
+        border-color: #04013b;
+        }
+    14%  {
+        border-radius: 40% 60% 54% 46%/49% 60% 40% 51%;
+        border-color: #0c1a8a;
+        }
+    28%  {
+        border-radius: 54% 46% 38% 62%/49% 70% 30% 51%;
+        border-color: #ac04ac;
+        }
+    42%  {
+        border-radius: 61% 39% 55% 45%/61% 38% 62% 39%;
+        border-color: #04013b;
+    }
+    56% { 
+        border-radius: 61% 39% 67% 33%/70% 50% 50% 30%;
+        border-color: #0c1a8a;
+    }
+    70% {
+        border-radius: 50% 50% 34% 66%/56% 68% 32% 44%;
+        border-color: #ac04ac;
+    }
+    84% {
+        border-radius: 46% 54% 50% 50%/35% 61% 39% 65%;
+        border-color: #0c1a8a;
+    }
+}
+@keyframes floating {
+    0%  {
+        top: 0%;
+        border-radius: 50%;
+        }
+    25%  {
+        top: 3%;
+        border-radius: 50%;
+        }
+    50%  {
+        top: 6%;
+        border-radius: 70% 70% 60% 60%;
+        }
+    75%  {
+        top: 3%;
+        border-radius: 50%;
+    }
+    100% { 
+        top: 0%;
+        border-radius: 50%;
+    }
+}
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+body, html {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    background-image: linear-gradient(to right, #04013b, #0c1a8a, #ac04ac);
+    background-size: cover;
+    background-repeat: repeat;
+}
+*, body {
+    font-family: "Open sans";
+}
+main {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+header {
+    display: flex;
+    max-height: 60px;
+}
+.menu-icon{
+    display: none;
+}
+header > nav {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+}
+.ul-component {
+    display: flex;
+}
+.ul-component > li {
+    list-style: none;
+    display: block;
+    padding: 20px;
+}
+.ul-component > li > a {
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+}
+.ul-component > li > a:hover {
+    text-decoration: underline;
+}
+.button-item {
+    background-color: transparent;
+    border: none;
+    border-color: none;
+    font-size: 18px;
+    color: white;
+    position: relative;
+    z-index: 0;
+}
+.button-item:hover {
+    text-decoration: underline;
+}
+.project-menu {
+    z-index: 1;
+    display: none;
+    flex-wrap: wrap;
+    position: absolute;
+    background-color: #040827;
+    width: 200px;
+    top: 54px;
+    border-radius: 10px;
+}
+.project-menu > .ul-component {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    background-color: #040827;
+    border-radius: 10px;
+    color: white;
+}
+.project-menu > .ul-component > li {
+    height: max-content;
+}
+.project-menu > ul > li > a {
+    padding: 0px;
+    margin: 0px;
+    font-size: 15px;
+    width: 100%;
+}
+.ul-component > .return-navbar-li, .return-btn {
+    display: none;
+}
+.pick {
+    display: none;
+    position: absolute;
+    transform: rotate(45deg);
+    width: 30px;
+    height: 30px;
+    background-color: #040827;
+    top: 50px;
+    color: white;
+    margin-left: 2px;
+    border-bottom-left-radius: 10px;
+}
+/* Content home */
+.content-home {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0px auto;
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    animation: 1s fadeIn;
+    animation-timing-function: linear;
+}
+.subheader {
+    display: flex;
+    color: white;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 50%;
+}
+.subheader > div {
+    width: 100%;
+    padding: 20px;
+}
+.my-name {
+    text-align: left;
+    font-size: 20px;
+}
+.presentation {
+    line-height: 25px;
+    font-size: 18px;
+}
+.second-header {
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.profile-img {
+    width: 50%;
+}
+.profile-img > img {
+    width: 100%;
+    border-radius: 100%;
+    animation: wave 10s infinite;
+}
+footer {
+    margin-top: auto;
+    background-color: rgb(7, 13, 99);
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    color: white;
+}
+.initialStateHeader {
+    display: flex;
+    justify-content: end;
+}
+/* Skills page */
+.content-skills {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0px auto;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+} 
+.skill {
+    color: white;
+    width: 300px;
+    height: 300px;
+    display: flex;
+    margin: 25px 5px;
+    border-radius: 10px;
+    flex-wrap: wrap;
+    flex-direction: column;
+    border-radius: 100%;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    animation: floating 5s infinite;
+    animation-timing-function: linear;
+    border: 1px solid white;
+}
+.logo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.logo > img {
+    width: auto;
+    height: 100%;
+    margin: 0px auto;
+}
+.skill-information {
+    width: 70%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.skill-name {
+    width: 100%;
+    margin: 5px 0px;
+    display: flex;
+    justify-content: center;
+}
+.skill-description {
+    width: 100%;
+    margin: 5px 0px;
+    display: none;
+}
+
+/* Projects */
+.content-projects {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0px auto;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+}
+.project-page-title {
+    width: 100%;
+    margin: 10px 0px;
+    display: flex;
+    justify-content: center;
+}
+.project-page-title > h1 {
+    color: white;
+    font-size: 45px;
+}
+.project-item {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.project-img {
+    width: 50%;
+    padding: 5px;
+    animation: fadeIn 1s;
+    animation-timing-function: linear;
+}
+.project-img > img {
+    width: 100%;
+    border-radius: 10px;
+}
+.project-information {
+    width: 50%;
+    display: flex;
+    padding: 5px;
+    flex-direction: column;
+    height: 100%;
+    animation: fadeIn 1s;
+    animation-timing-function: linear;
+}
+.project-name {
+    width: 100%;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: baseline;
+}
+.project-name > div > h2 {
+    color: white;
+}
+.project-name > div > span > a {
+    font-size: 15px;
+    color: white;
+    text-decoration: none;
+    margin-left: 10px;
+}
+.project-name > div > span > a:hover {
+    text-decoration: underline;
+}
+.project-description {
+    width: 100%;
+    margin-bottom: 20px;
+}
+.project-description > p {
+    color: white;
+    font-weight: 300;
+    line-height: 25px;
+    font-size: 18px;
+    text-align: justify;
+}
+.project-links {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: auto;
+    margin-bottom: 10px;
+}
+.unique {
+    justify-content: center;
+}
+.project-links > .link {
+    width: 50%;
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+.project-links > .link > a {
+    text-decoration: none;
+    background-color: #040827;
+    color: white;
+    display: flex;
+    align-items: center;
+    height: 50px;
+    width: 150px;
+    border-radius: 20px;
+    justify-content: center;
+}
+.project-links > .link > a:hover {
+    background-color: white;
+    color: #040827;
+}
+.project-links > .link > a > span {
+    margin-right: 5px;
+}
+/* paginator */
+.paginator {
+    width: 100%;
+    margin-top: auto;
+    margin-bottom: 20px;
+}
+.navigation-pages {
+    width: 100%;
+}
+.pagination {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.page-item {
+    list-style: none;
+}
+.page-item > a {
+    display: flex;
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: #040827;
+    border-radius: 10px;
+}
+.page-item > a:hover {
+    background-color: white;
+    color: #040827;
+}
+.page-item > a{
+    text-decoration: none;
+    color: white;
+}
+/* Project details */
+.project-img-desc {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+.project-img-desc > img{
+    max-width: 350px;
+    height: auto;
+    border-radius: 10px;
+}
+/* Image zoom effect */
+.black-bg {
+    display: none;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 0;
+}
+.container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.close {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: end;
+    color: white;
+    padding: 10px;
+}
+.close > span {
+    font-size: 35px;
+    cursor: pointer;
+}
+.image-zoom {
+    position: absolute;
+    display: flex;
+    width: 90%;
+    max-width: 1000px;
+    height: auto;
+    z-index: 1;
+    opacity: 1;
+}
+/* Contact form */
+.content-contact {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1400px;
+    margin: 0px auto;
+    animation: 1s fadeIn;
+    animation-timing-function: linear;
+}
+.content-page {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.title {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.title > h1 {
+    text-align: center;
+    color: white;
+    font-size: 30px;
+}
+form {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.form-group {
+    width: 100%;
+    margin: 0px 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.captcha {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+input[type="email"], input[type="text"]{
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 10px 20px;
+    width: 100%;
+    margin: 20px 0px;
+    color: white;
+    background-color: transparent;
+}
+input[type="text"] {
+    width: 75%;
+}
+textarea {
+    border: 1px solid #f1f1f1;
+    border-radius: 10px;
+    margin: 20px 0px;
+    padding: 10px;
+    font-size: 20px;
+    color: white;
+    width: 100%;
+    background-color: transparent;
+}
+input[type="email"]:focus, input[type="text"]:focus, textarea:focus {
+    outline: none;
+    border: 1px solid #099ef5;
+}
+::placeholder {
+    color: white;
+}
+.form-group > img {
+    width: 20%;
+    height: auto;
+    border-radius: 10px;
+    margin-right: 5px;
+}
+input[type="submit"] {
+    background-color: #0c1a8a;
+    color: white;
+    border-radius: 10px;
+    padding: 15px 30px;
+    border: 1px solid #0c1a8a;
+}
+input[type="submit"]:hover {
+    background-color: white;
+    color: #0c1a8a;
+    cursor: pointer;
+}
+.w-middle {
+    width: 50%;
+}
+.contact-information{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.contact-detail {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.icon-contact {
+    width: 10%;
+}
+.icon-contact > img {
+    width: 90%;
+    max-width: 50px;
+    height: auto;
+}
+.source {
+    width: 50%;
+    margin: 0px 10px;
+}
+.source > a {
+    text-decoration: none;
+    color: white;
+}
+.source > span {
+    color: white;
+}
+/* Errors */
+.error {
+    border-radius: 10px;
+    padding: 10px 20px;
+    border: 1px solid #f00;
+    background-color: rgb(255, 189, 189);
+}
+.error > span {
+    color: #f00;
+}
+/* Not found */
+.content-not-found {
+    width: 100%;
+    height: 100%;
+    max-width: 1400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px auto;
+}
+.content-not-found > .text {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.content-not-found > .text > div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.content-not-found > .text > div > h1{
+    font-size: 6rem;
+    text-align: center;
+    color: white;
+}
+.content-not-found > .text > div > h2 {
+    font-size: 5rem;
+    text-align: center;
+    color: white;
+}
+/* About me */
+.content-aboutme {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    animation: 1s fadeIn;
+    animation-timing-function: linear;
+}
+.content-aboutme > .title {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.content-aboutme > .title > h1 {
+    font-size: 30px;
+    color: white;
+}
+.content-aboutme > section {
+    width: 90%;
+    margin: 10px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.content-aboutme > section > .subtitle {
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    margin: 40px 0px;
+}
+.content-aboutme > section > .subtitle > h2 {
+    font-size: 25px;
+    font-weight: 500;
+    color: white;
+}
+.section-content {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+    justify-content: space-between;
+}
+.section-content  > .image-aboutme {
+    width: 30%;
+    display: flex;
+}
+.section-content > .image-aboutme > img {
+    width: 100%;
+    height: auto;
+    margin: 0px auto;
+}
+.section-content > .information-about-me {
+    width: 45%;
+    margin: 0px auto;
+}
+.section-content > .information-about-me > p {
+    color: white;
+    text-align: justify;
+    line-height: 25px;
+    font-size: 18px;
+}
+.section-content > .course {
+    width: 30%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px;
+}
+.course > .img {
+    width: 100%;
+}
+.course > .img > img {
+    width: 100%;
+}
+.course > .information {
+    padding: 5px;
+}
+.course > .information > .subtitle {
+    color: white;
+}
+.course > .information > .description {
+    margin: 15px 0px;
+    color: white;
+    text-align: justify;
+}
+
+
+@media screen and (max-width: 1250px) {
+    .skill {
+        width: 250px;
+        height: 250px;
+    }
+}
+@media screen and (max-width: 1000px) {
+    html {
+        min-height: max-content;
+    }
+    body {
+        position: relative;
+        z-index: 0;
+        min-height: 100%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    header {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        position: sticky;
+        z-index: 10;
+        top: 0;
+        background-image:linear-gradient(to right, #04013b, #0c1a8a, #ac04ac);;
+    }
+    .menu-icon {
+        display: flex;
+        padding: 15px;
+    }
+    .menu-icon > span {
+        font-size: 35px;
+        color: white;
+    }
+    .menu-icon > span:hover {
+        cursor: pointer;
+    }
+    /* Navigation Bar */
+    .button-item {
+        position: none;
+    }
+    header > nav, .project-menu {
+        top: 60px;
+        display: none;
+        flex-wrap: wrap;
+        position: absolute;
+        z-index: 2;
+        width: 300px;
+        justify-content: start;
+        background-image: linear-gradient(to right, #04013b, #0c1a8a);
+    }
+    .project-menu {
+        top: 0px;
+        left: 0px;
+        align-items: start;
+        border-radius: 0px;
+        background-color: linear-gradient(to right, #04013b, #0c1a8a);
+    }
+    .project-menu > .ul-component {
+        border-radius: 0px;
+        background-color: transparent;
+    }
+    .ul-component > .return-navbar-li {
+        display: flex;
+        width: 100%;
+    }
+    .return-navbar-li > button {
+        display: flex;
+    }
+    header > nav > ul {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: start;
+    }
+    header > nav > ul > li {
+        display: flex;
+        width: 100%;
+
+    }
+    .button-item {
+        background-color: transparent;
+        border: none;
+        border-color: none;
+        font-size: 18px;
+        color: white;
+    }
+    .button-item:hover {
+        text-decoration: underline;
+    }
+    .return-btn {
+        display: flex;
+        align-items: center;
+    }
+    .return-btn > span {
+        margin-right: 3px;
+    }
+    .return-btn:hover {
+        text-decoration: none;
+    }
+
+    /* Home page */
+    .subheader {
+        width: 100%;
+    }
+    .subheader > div {
+        padding: 15px;
+    }
+    .my-name {
+        text-align: center;
+        font-size: 17px;
+    }
+    .presentation {
+        font-size: 14px;
+        line-height: 25px;
+    }
+    .profile-img {
+        width: 100%;
+    }
+
+    /* skills */
+    .content-skills {
+        justify-content: center;
+    }
+    .skill {
+        width: 175px;
+        height: 175px;
+        margin: 4px 4px;
+    }
+    .logo {
+        width: 100%;
+    }
+    /* Project */
+    .project-item {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 30px 10px;
+    }
+    .project-img {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .project-information {
+        width: 100%;
+        height: max-content;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .project-links {
+        margin-top: 20px;
+        margin-bottom: 0px;
+    }
+    /* pagination */
+    .page-item > a {
+        padding: 8px 15px;
+        font-size: 15px;
+    }
+    /* Project description */
+    .project-img-desc {
+        width: 100%;
+    }
+    .project-page-title > h1 {
+        font-size: 30px;
+    }
+    .project-name > div > h2 {
+        font-size: 20px;
+    }
+    /* Contact form */
+    .form-group {
+        width: 90%;
+    }
+    .w-full {
+        width: 100%;
+    }
+    .source {
+        width: 70%;
+    }
+    /* About me */
+    .section-content > .image-aboutme {
+        width: 100%;
+    }
+    .section-content > .information-about-me {
+        width: 100%;
+        margin-top: 10px;
+    }
+    .section-content > .course {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

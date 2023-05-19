@@ -1,0 +1,36 @@
+<header>
+    <div class="menu-icon">
+        <span class="material-symbols-outlined" id="menu-btn">menu</span>
+    </div>
+    <nav class="nav-component animate__animated animate__faster" id="nav-menu">
+        <ul class="ul-component">
+            <li><a href="{% url 'home_app:home' %}" class="nav-item">Home</a></li>
+            <li><a href="{% url 'skills:front-end' %}" class="nav-item">Front End Skills</a></li>
+            <li>
+                <a href="{% url 'skills:back-end' %}" class="nav-item">Back End Skills</a>
+            </li>
+            <li>
+                <button class="nav-item button-item" id="project-btn">Projects</button>
+                <div class="pick">
+                </div>
+                <nav class="nav-component animate__animated animate__faster project-menu" id="project-categories">
+                    <ul class="ul-component">
+                        <li class="return-navbar-li">
+                            <button class="nav-item button-item return-btn" id="return-navbar-btn"> 
+                                <span class="material-symbols-outlined">
+                                    arrow_back
+                                </span>
+                                Projects
+                            </button>
+                        </li>
+                        <li><a href="{% url 'projects_app:projects-java' %}" class="nav-item">Springboot - Java</a></li>
+                        <li><a href="{% url 'projects_app:projects-django' %}" class="nav-item">Django - Python</a></li>
+                        <li><a href="{% url 'projects_app:projects-express' %}" class="nav-item">Express - Javascript</a></li>
+                    </ul>
+                </nav>
+            </li>
+            <li><a href="{% url 'contact_app:contact' %}" class="nav-item">Contact Me</a></li>
+            <li><a href="{% url 'home_app:about' %}" class="nav-item">About Me</a></li>
+        </ul>
+    </nav>
+</header>
